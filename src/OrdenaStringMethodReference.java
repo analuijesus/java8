@@ -26,6 +26,11 @@ public class OrdenaStringMethodReference {
 
         nomes.sort(Comparator.comparing(funcao));
 
+        // faz exatamente este código, mas de forma destrinchada  -> nomes.sort(Comparator.comparing(String::length));
+        Function<String, Integer> funcao4 = String::length;
+        Comparator<String> comparador = Comparator.comparing(funcao4);
+        nomes.sort(comparador);
+
         System.out.println(nomes);
 
         //nomes.forEach(s -> System.out.println(s));
