@@ -25,6 +25,12 @@ public class StreamTeste {
                 .map(Curso::getAluno)
                 //.map(c -> c.getAluno()) -> mesmo map acima
                 .forEach(System.out::println);
+
+        int soma = cursos.stream()
+                .filter(c -> c.getAluno() >= 100)
+                .mapToInt(Curso::getAluno)
+                .sum();
+        System.out.println(soma);
     }
 }
 
